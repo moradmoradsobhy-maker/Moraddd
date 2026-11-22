@@ -1,0 +1,114 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+body {
+  background: #0d1b12;
+  color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.game-wrapper {
+  width: 100%;
+  max-width: 900px;
+  height: 100vh;
+  max-height: 680px;
+  display: flex;
+  flex-direction: column;
+  background: #142b1d;
+  border: 2px solid #2b543a;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  background: linear-gradient(90deg, #0b1910, #193824, #0b1910);
+  border-bottom: 2px solid #2e6642;
+}
+
+.player-title {
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: #ffd700;
+  text-shadow: 0 2px 10px rgba(255, 215, 0, 0.5);
+  font-family: 'Arial Black', sans-serif;
+}
+
+.scoreboard {
+  display: flex;
+  gap: 20px;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.stat span {
+  color: #4ade80;
+  font-size: 1.3rem;
+}
+
+.canvas-container {
+  position: relative;
+  flex: 1;
+  width: 100%;
+  overflow: hidden;
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: crosshair;
+  touch-action: none;
+}
+
+.banner {
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  font-size: 3.2rem;
+  font-weight: 900;
+  padding: 12px 36px;
+  border-radius: 16px;
+  background: rgba(0, 0, 0, 0.78);
+  border: 3px solid #ffd700;
+  color: #ffd700;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  z-index: 10;
+}
+
+.banner.hidden {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.7);
+}
+
+.hint {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.55);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  color: #e2e8f0;
+  pointer-events: none;
+  white-space: nowrap;
+}
